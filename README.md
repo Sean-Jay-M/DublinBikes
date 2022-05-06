@@ -3,6 +3,8 @@
 
 *To view the figures, view the Documentation Directory*
 
+*Jupyter notebook for Machine Learning is not included*
+
 2.1 Application architecture
 The application consists of three main components, which are Scrapers, Flask and Machine Learning.
 
@@ -19,7 +21,7 @@ The components are deployed on our EC2 instance and connect to the database crea
 2.2 Technology stack
 
 The technologies used in this project are organised in the diagram below. A variety of libraries are employed, such as Google Maps for displaying the map and markers, Chart.js for prediction charts, SQLAlchemy for database access, data science libraries for machine  learning. Jupyter Notebook was the tool utilised in developing prediction models.
-In terms of programming languages, front-end mainly uses javascript, back-end uses python for web services and machine learning, and SQL for databases. We also have a DEVOPS process that is built on Bash, including conda env installation, application deployment, etc. They are implemented in the scripts under /scripts folder.
+In terms of programming languages, front-end mainly uses javascript, back-end uses python (Flask) for web services and machine learning, and SQL for databases. We also have a DEVOPS process that is built on Bash, including conda env installation, application deployment, etc. They are implemented in the scripts under /scripts folder.
 Developers use PyCharm as the IDE and Github for version control.
 
 
