@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+(*) -> "open browser"
+-> "user enters app URL"
+-> "display the map of Dublin"
+-> "display bike"
+--> "stations on map"
+-left-> "select a bike station"
+-left-> "show the tool tip with station info"
+--> "expand the side bar"
+-> "show realtime weather"
+-> "show prediction chart and table"
+-> (*)
+
+'(*) --> "open browser"
+'--> "user enters app URL"
+'--> "display the map of Dublin"
+'--> "display bike"
+'--> "stations on map"
+'-right-> "select a bike station"
+'-up-> "show the tool tip with station info"
+'-up-> "expand the side bar"
+'-up-> "show realtime weather"
+'-up-> "show prediction chart and table"
+'-up-> (*)
+
+@enduml

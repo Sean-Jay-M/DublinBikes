@@ -1,0 +1,80 @@
+body{
+    background-color:gainsboro;
+}
+#map {
+    height: 100%;
+}
+
+.wrapper{
+    display: flex;
+    height: 100vh;
+}
+
+.main{
+    flex-grow: 1;
+    padding:20px;
+    overflow-y:auto;
+}
+
+/* toggle */
+.side-panel-toggle{
+    width:30px;
+    height:60px;
+    flex-shrink:0;
+    display:none;
+    place-items:center;
+    color:#ffffff;
+    background:#5ac5d6;
+    border: none;
+    border-radius:5px 0 0 5px ;
+    outline: none;
+    cursor: pointer;
+    place-self: center;
+}
+/* hover on the toggle */
+.side-panel-toggle:hover{
+    background:slategray;
+}
+/* set the side panel icon display as initial */
+.sp-icon-close{
+    display:initial !important;
+}
+/* side panel body */
+.side-panel{
+    display: none;
+    width:400px;
+    height: 100vh;
+    flex-shrink: 0;
+    padding:10px;
+    color:#a05ad6;
+    background:#ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.35);
+}
+.scrollspy{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 220px;
+}
+/*!*click on toggle and open side panel body*!*/
+/*.side-panel-open .side-panel{*/
+/*    display:initial;*/
+/*}*/
+/*!*click on toggle and change the arrow to 'closing' status*!*/
+/*.side-panel-open .sp-icon-open{*/
+/*    display:none !important;*/
+/*}*/
+/*!*click on toggle and change the arrow to 'open' status*!*/
+/*.side-panel-open .sp-icon-close{*/
+/*    display:initial !important;*/
+/*}*/
+
+/*!*set the display of table*!*/
+/*.table {*/
+/*	display: table;*/
+/*}*/
+/*.table tr {*/
+/*	display: table-cell;*/
+/*}*/
+/*.table tr td {*/
+/*	display: block;*/
+/*}*/

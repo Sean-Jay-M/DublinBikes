@@ -1,0 +1,44 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+package dublinbikes {
+    package common #lightgreen {
+        class Config
+        class DBManager {
+            engine()
+        }
+    }
+
+    package scraper {
+        abstract class WebScraper {
+            scrape()
+        }
+        WebScraper *-- Config: _config
+        DBManager --* WebScraper: _engine
+        WebScraper <|-- BikeStationScraper
+        WebScraper <|-- AirQualityScraper
+        WebScraper <|-- WeatherScraper
+        class main as "main.py"
+        BikeStationScraper *-- main
+        AirQualityScraper *-- main
+        WeatherScraper *-- main
+    }
+    class Config
+
+    package ml {
+        class Prediction {
+            start()
+        }
+        Prediction *-- Config: _config
+        Prediction *-- DBManager: _conn
+        class DataPreparation
+        Prediction -- DataPreparation
+    }
+
+    package web {
+        class app as "app.py"
+        app *-- Config: _config
+        app *-- DBManager: _engine
+    }
+}
+@enduml

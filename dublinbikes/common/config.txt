@@ -1,0 +1,25 @@
+# database
+URL = localhost
+PORT = 3306
+DB = dublinbikesdb
+USER = root
+PASSWORD =
+
+# Bike stations
+STATIONS = https://api.jcdecaux.com/vls/v1/stations
+NAME = dublin
+APIKEY = 
+
+# Weather
+APIWLink = https://api.openweathermap.org/data/2.5/onecall?lat=53.3498&lon=6.2603&units=metric&exclude=current,alerts,daily&appid=
+APIWKEY = 
+
+# Data quality
+AIRQUALITY_API = http://api.openweathermap.org/data/2.5/air_pollution?lat=53.3449924849743&lon=-6.267337446492698&appid=
+AIRQUALITY_API_KEY = 
+
+# Flask
+# the host that flask will be exposed to
+FLASK_HOST = 0.0.0.0
+# change to your local path
+MODEL_PATH = /home/ubuntu/model/

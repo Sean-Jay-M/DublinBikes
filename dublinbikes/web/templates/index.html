@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <title>Dublin Bikes</title>
+    <!-- this is the javascript library from Google documentation-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--lodash-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script>_u = _.noConflict();</script>
+    <script type=text/javascript>var $SCRIPT_ROOT = '{{ request.script_root|tojson|safe }}';</script>
+    <!--css link-->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}" />
+    <!-- google icon library-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--local javascript-->
+    <script src="{{url_for('static', filename='loadjson.js')}}"></script>
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- this is the main page, map-->
+        <div class="main">
+            <div id="map"></div>
+            <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+            <!-- Insert the key below after key= -->
+            <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxin59Zq_ZE07NCpnrW_RRhYmAk4EhCSQ&callback=initMap&v=weekly"
+                async>
+                </script>
+        </div>
+
+        <!-- this is the side panel-->
+        <button class="side-panel-toggle" id="side-panel-trigger" type="button">
+<!--            <span class="material-icons sp-icon-open">keyboard_double_arrow_left</span>-->
+            <span class="material-icons sp-icon-close">keyboard_double_arrow_right</span>
+        </button>
+        <div class="side-panel" id="side-panel-body">
+            <h2 style="text-align: center; font-weight:bold;">Info Board</h2>
+            <nav id="real-time window" class="navbar navbar-light px-3">
+                <h2 style="font-weight: bold;">Real-time</h2>
+            </nav>
+            <div data-bs-spy="scroll" data-bs-target="#real-time window" data-bs-offset="0" class="scrollspy" tabindex="0">
+                <p id="stationname" style="color: black"></p>
+                <p id="stationnumber" style="color: black"></p>
+                <p id="bikestands" style="color: black"></p>
+                <p id="banking" style="color: black"></p>
+                <p id="status" style="color: black"></p>
+                <p id="AvailableBikeStands" style="color: black"></p>
+                <p id="aqi" style="color: black"></p>
+                <p id="temperature" style="color: black"></p>
+                <p id="feels_like" style="color: black"></p>
+                <p id="rain" style="color: black"></p>
+                <p id="wind_speed" style="color: black"></p>
+            </div>
+            <nav id="prediction window" class="navbar navbar-light px-3">
+                <h2 style="font-weight: bold;">Prediction</h2>
+            </nav>
+            <div data-bs-spy="scroll" data-bs-target="#prediction window" data-bs-offset="0" class="scrollspy" tabindex="0">
+                <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                <table id="prediction_table" style="width: 400px;">
+                    <thead id="table_head">
+                        <tr>
+                            <th id="col_time" style="color: black">Time</th>
+                            <th id="col_available_bikes" style="color: black">Available Bikes</th>
+                            <th id="col_available_bike_stands" style="color: black">Available Bike Stands</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table_body" style="color: black">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script>
+            document.querySelector(".side-panel-toggle").addEventListener("click", () => {
+                // document.querySelector(".wrapper").classList.toggle("side-panel-open");
+                document.getElementById("side-panel-body").style.display="none";
+                document.getElementById("side-panel-trigger").style.display="none";
+            });
+        </script>
+    </div>
+
+</body>
+
+</html>

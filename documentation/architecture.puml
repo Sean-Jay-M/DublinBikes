@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/deployment-diagram
+
+actor User
+archimate #Technology "Browser" as browser <<technology-device>>
+
+cloud "Web API" as webapi {
+    card JCDecaux
+    card openweathermap
+}
+
+cloud EC2 {
+    component "<b> Flask</b>\napp.py" as Flask
+    component "<b>Scrappers</b>\n  main.py" as Scrappers
+    component "<b>Machine Learning</b>\n     Prediction.py" as ml
+'    interface API as api
+    file "Pickle files" as pickle
+}
+
+cloud RDS {
+    database Database
+}
+
+User <-- browser
+browser <-- Flask
+Flask <--- Database
+Flask <-- pickle
+webapi --> Scrappers
+Scrappers ---> Database
+ml <-- Database
+ml --> pickle
+
+@enduml
