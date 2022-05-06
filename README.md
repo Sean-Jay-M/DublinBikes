@@ -47,3 +47,4 @@ The user flow is very straightforward. The user enters the URL in the browser to
 
 Figure 4: User flow
 
+*To Run Locally*
