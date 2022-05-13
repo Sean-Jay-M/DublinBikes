@@ -121,7 +121,7 @@ INFO: end bike_station_scraper.scrape()
 
 ### Run the web application
 
-1. Prepare the Google map api key. **TODO Clarence to add more details**
+1. Prepare the Google map api key. You can find all the documents related to Google Map platform APIs' usage via this link: https://developers.google.com/maps/documentation/javascript#features. To get a Google Map API key, you need to enable a billing account and you will get a certain amount of free tier from Google. Once you get your API key, you can replace the key with your key in the HTML file (dublinbikes/web/templates/index.html).
 
 2. Run the flask application dublinbikes/web/app.py and access the URL printed
 in the logs. It's a URL with port 5000 like http://192.168.0.187:5000/.
