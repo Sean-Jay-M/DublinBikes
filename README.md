@@ -43,7 +43,7 @@ ml: The prediction class is the main program that trains the prediction model. I
 
 The package structure organises the code in a logical way so that if we want to add more functionalities we can quickly identify where to put the class and reuse the utility code. It makes the code more readable and maintainable as well.
 
-![Architecture](documentation/class-diagrams.puml)
+![Architecture](documentation/class-diagrams.png)
 
 Figure 3: Class diagram
 
@@ -51,7 +51,7 @@ Figure 3: Class diagram
 
 The user flow is very straightforward. The user enters the URL in the browser to visit our website, and then the map will be shown with markers. Each marker stands for a bike station and when we click on it a brief containing  information will be displayed, meanwhile the side bar will be shown, which contains the details and predictions.
 
-![Architecture](documentation/user-flow-diagram.puml)
+![Architecture](documentation/user-flow-diagram.png)
 
 Figure 4: User flow
 
